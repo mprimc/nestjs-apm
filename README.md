@@ -82,6 +82,8 @@ ELASTIC_APM_LOG_LEVEL
 ELASTIC_APM_CAPTURE_BODY
 # Capture apm error log stack traces. Possible options are: never, messages, always
 ELASTIC_APM_CAPTURE_ERROR_LOG_STACK_TRACES
-# Set this option to true to use the URL path as the transaction name if no other route could be determined. 
+# Set this option to true to use the URL path as the transaction name if no other route could be determined.
 ELASTIC_APM_USE_PATH_AS_TRANSACTION_NAME
+# Set this option to ignore specific URLs from being captured as transactions. The value is array of strings. (Ex. ['/status', '/products/*'])
+ELASTIC_APM_TRANSACTION_IGNORE_URLS
 ```
