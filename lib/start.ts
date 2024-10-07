@@ -72,5 +72,14 @@ if (process.env.ELASTIC_APM_USE_PATH_AS_TRANSACTION_NAME) {
     process.env.ELASTIC_APM_USE_PATH_AS_TRANSACTION_NAME === 'true';
 }
 
+if (process.env.ELASTIC_APM_TRANSACTION_IGNORE_URLS) {
+  const ignoreUrls = JSON.parse(
+    process.env.ELASTIC_APM_TRANSACTION_IGNORE_URLS
+  );
+  if (Array.isArray(ignoreUrls)) {
+    options['ignoreUrls'] = ignoreUrls;
+  }
+}
+
 const apm: apmAgent.Agent = apmAgent.start(options);
 export { apm };
